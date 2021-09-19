@@ -24,9 +24,9 @@ class BaseTapBarController: UITabBarController {
         todayNavController.navigationBar.prefersLargeTitles = true
     
         viewControllers = [
+            createViewController(viewController: AppsSearchController(), title: "Search", imageName: "search"),
             createViewController(viewController: UIViewController(), title: "Today", imageName: "today_icon"),
-            createViewController(viewController: UIViewController(), title: "Apps", imageName: "apps"),
-            createViewController(viewController: UIViewController(), title: "Search", imageName: "search")
+            createViewController(viewController: UIViewController(), title: "Apps", imageName: "apps")
         ]
         
     }
