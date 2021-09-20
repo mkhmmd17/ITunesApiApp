@@ -44,12 +44,12 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
+        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Games, Movies and Music")
     }
     
     var timer: Timer?
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             Service.shared.fetchApps(searchTerm: searchText) { res, err in
@@ -63,7 +63,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     
     fileprivate func fetchITunesApps() {
         
-        Service.shared.fetchApps(searchTerm: "Twitter") { (results, err) in
+        Service.shared.fetchApps(searchTerm: "Twiiter") { (results, err) in
             
             if let err = err {
                 print("Failed to fetch apps", err)
