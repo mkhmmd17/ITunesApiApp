@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    fileprivate var appResult = [Result]()
     
     fileprivate let cellId = "id1234"
 
@@ -22,7 +25,6 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         
     }
     
-    fileprivate var appResult = [Result]()
     
     fileprivate func fetchITunesApps() {
         
@@ -52,12 +54,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
-        
-        let appResult = appResult[indexPath.item]
-        cell.nameLabel.text = appResult.trackName
-        cell.categoryLabel.text = appResult.primaryGenreName
-        cell.ratingsLabel.text = String(format: "Rating: %.2f", appResult.averageUserRating)
-        
+        cell.appResult = appResult[indexPath.item]
         return cell
         
     }
