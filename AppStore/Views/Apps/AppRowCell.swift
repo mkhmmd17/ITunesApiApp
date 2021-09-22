@@ -46,5 +46,9 @@ class AppRowCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configureView() {
+        
+        
+    }
     
 }
