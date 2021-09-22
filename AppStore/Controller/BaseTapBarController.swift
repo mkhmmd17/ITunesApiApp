@@ -9,8 +9,6 @@ import UIKit
 
 class BaseTapBarController: UITabBarController {
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,9 +22,9 @@ class BaseTapBarController: UITabBarController {
         todayNavController.navigationBar.prefersLargeTitles = true
     
         viewControllers = [
-            createViewController(viewController: AppsSearchController(), title: "Search", imageName: "search"),
+            createViewController(viewController: AppsController(), title: "Apps", imageName: "apps"),
             createViewController(viewController: UIViewController(), title: "Today", imageName: "today_icon"),
-            createViewController(viewController: UIViewController(), title: "Apps", imageName: "apps")
+            createViewController(viewController: AppsSearchController(), title: "Search", imageName: "search")
         ]
         
     }

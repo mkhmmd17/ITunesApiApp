@@ -38,23 +38,11 @@ class SearchResultCell: UICollectionViewCell {
         return iv
     }()
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "App Name"
-        return label
-    }()
+    let nameLabel = UILabel(text: "App Name", font: .systemFont(ofSize: 19))
     
-    let categoryLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Photos and Videos"
-        return label
-    }()
+    let categoryLabel = UILabel(text: "Photos and Videos", font: .systemFont(ofSize: 19))
     
-    let ratingsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "9.26M"
-        return label
-    }()
+    let ratingsLabel = UILabel(text: "", font: .systemFont(ofSize: 19))
     
     let getButton: UIButton = {
         let button = UIButton(type: .system)

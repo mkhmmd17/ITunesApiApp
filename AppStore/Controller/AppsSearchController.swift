@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class AppsSearchController: BaseListController , UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     fileprivate let cellId = "id1234"
     
@@ -43,6 +43,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         navigationItem.searchController = self.searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.obscuresBackgroundDuringPresentation = false
+        
         searchController.searchBar.delegate = self
         searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Games, Movies and Music")
     }
@@ -82,7 +83,6 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         return .init(width: view.frame.width, height: 350)
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         enterSearchTermLabel.isHidden = appResult.count != 0
         return appResult.count
@@ -93,13 +93,5 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         cell.appResult = appResult[indexPath.item]
         return cell
         
-    }
-
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
