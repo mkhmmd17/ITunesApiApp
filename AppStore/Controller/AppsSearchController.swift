@@ -54,7 +54,7 @@ class AppsSearchController: BaseListController , UICollectionViewDelegateFlowLay
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             Service.shared.fetchApps(searchTerm: searchText) { res, err in
-                self.appResult = res
+                self.appResult = res?.results ?? []
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -64,13 +64,13 @@ class AppsSearchController: BaseListController , UICollectionViewDelegateFlowLay
     
     fileprivate func fetchITunesApps() {
         
-        Service.shared.fetchApps(searchTerm: "Twiiter") { (results, err) in
+        Service.shared.fetchApps(searchTerm: "Twiiter") { (res, err) in
             
             if let err = err {
                 print("Failed to fetch apps", err)
             }
             
-            self.appResult = results
+            self.appResult = res?.results ?? []
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
