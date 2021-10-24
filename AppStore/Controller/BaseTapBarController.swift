@@ -11,15 +11,15 @@ class BaseTapBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let todayController = UIViewController()
-        todayController.view.backgroundColor = .white
-        todayController.navigationItem.title = "Today"
-        
-        let todayNavController = UINavigationController(rootViewController: todayController)
-        todayNavController.tabBarItem.title = "Today"
-        todayNavController.tabBarItem.image = #imageLiteral(resourceName: "today_icon")
-        todayNavController.navigationBar.prefersLargeTitles = true
+//        
+//        let todayController = UIViewController()
+//        todayController.view.backgroundColor = .white
+//        todayController.navigationItem.title = "Today"
+//
+//        let todayNavController = UINavigationController(rootViewController: todayController)
+//        todayNavController.tabBarItem.title = "Today"
+//        todayNavController.tabBarItem.image = #imageLiteral(resourceName: "today_icon")
+//        todayNavController.navigationBar.prefersLargeTitles = true
     
         viewControllers = [
             createViewController(viewController: AppsPageController(), title: "Apps", imageName: "apps"),

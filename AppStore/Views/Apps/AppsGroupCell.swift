@@ -27,3 +27,4 @@ class AppsGroupCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
