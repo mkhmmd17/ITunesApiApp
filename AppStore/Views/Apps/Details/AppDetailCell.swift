@@ -20,7 +20,7 @@ class AppDetailCell: UICollectionViewCell {
     
     let appIconImage = UIImageView(cornerRadius: 16)
     
-    let whatsNewLabel = UILabel(text: "What;s New", font: .boldSystemFont(ofSize: 20))
+    let whatsNewLabel = UILabel(text: "What's New", font: .boldSystemFont(ofSize: 20))
     
     let releaseNotesLabel = UILabel(text: "Release NOtes", font: .systemFont(ofSize: 16), numberOfLines: 0)
     
